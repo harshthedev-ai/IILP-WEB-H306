@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Font | Test | CSS Box Model(w/h/b/m/p)</title>
+    <style>
+        h1{
+            color: aqua;
+            background-color: rgba(0, 225, 255, 0.188);
+        }
+        h3{
+            margin-block: 8px;
+            margin-block-start: 16px;
+            text-shadow: 2px 2px 1px rgba(0, 225, 255, 0.188);
+        }
+        p{
+            margin-block-start: 0px;
+            margin-block-end: 12px;
+        }
+        #box{
+            width: 305px;
+            height: 185px;
+            background-color: beige;
+            border: 4px solid bisque;
+            padding-left: 4px;
+            padding-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1em=16px -->
+    <!-- alt+Z for text wrapping -->
+    <h1 style="text-align: center; font-size: 80px; color: rgb(25, 25, 170); margin-block-start: 8px; margin-block-end: 8px;">Welcome!</h1>
+    <h3>Lorem Lorenza special scavaganza test:</h3>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit ex voluptatibus obcaecati cupiditate dolorem, quia laudantium eius sint, fuga, ratione dicta modi ut eum in fugiat incidunt. Voluptas, mollitia eos. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.
+    </p>
+    <div id="box">
+        <p>
+            Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.
+        </p>
+    </div>
+</body>
+</html>
