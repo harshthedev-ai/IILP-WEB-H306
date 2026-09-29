@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            /* background-color: antiquewhite; */
+            text-align: center;
+        }
+        main{
+            max-width: 960px;
+            height: 1000px;
+            background-color: rgb(211, 147, 68);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        header{
+            max-width: 960px;
+            height: 100px;
+            background-color: #ccc;
+        }
+        nav{
+            max-width: 960px;
+            height: 80px;
+            background-color: #ccc;  
+        }
+        section{
+            max-width: 960px;
+            height: 400px;
+            display: flex;
+            flex-direction: row; /* by default its row */
+            column-gap: 10px;
+        }
+        #left{
+            flex-grow: 1;
+            background-color: #e7edde;
+        }
+        #right{
+            flex-grow: 2;
+            background-color: ;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #aside,#article{
+            flex-grow: 1;
+            background-color: rgb(244, 229, 243);
+        }
+        footer{
+            max-width: 960px;
+            height: 50px;
+            background-color: #ccc;  
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 style="color: aquamarine; background-color: blueviolet;">Test</h1> -->
+    <main>
+        <header>
+            <h2>Header</h2>
+        </header>
+        <nav>
+            <h2>Navbar</h2>
+        </nav>
+        <section>
+            <div id="left"></div>
+            <div id="right">
+                <div id="aside"><h3>Aside</h3></div>
+                <div id="article"><h3>Article</h3></div>
+            </div>
+        </section>
+        <footer>
+            <h2>footer</h2>
+        </footer>
+    </main>
+</body>
+</html>
