@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Harsh Sharma</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="head">
+        <h1>Let's Connect</h1>
+        <p>Have a question, project idea, or just want to say hello? Fill out the form below[cite: 2].</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="form.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="form-container">
+            <h2>Contact Form</h2>
+            <p class="form-intro">Please fill in your details below.</p>
+
+            <form action="#" method="POST">
+                <!-- NAME -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                </div>
+
+                <!-- PHONE -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                </div>
+
+                <!-- SUBJECT -->
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What would you like to discuss?" required>
+                </div>
+
+                <!-- PURPOSE -->
+                <div class="form-group">
+                    <label for="purpose">Reason for Contact</label>
+                    <select id="purpose" name="purpose">
+                        <option value="">Select an option</option>
+                        <option value="project">Project Discussion</option>
+                        <option value="collaboration">Collaboration</option>
+                        <option value="internship">Internship / Opportunity</option>
+                        <option value="question">General Question</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- INTERESTS -->
+                <div class="form-group">
+                    <label>What topics are you interested in?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interest" value="web"> Web Development</label>
+                        <label><input type="checkbox" name="interest" value="ai"> Artificial Intelligence</label>
+                        <label><input type="checkbox" name="interest" value="programming"> Programming</label>
+                        <label><input type="checkbox" name="interest" value="project"> Project Ideas</label>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCE -->
+                <div class="form-group">
+                    <label>Your Experience Level</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="experience" value="beginner" required> Beginner</label>
+                        <label><input type="radio" name="experience" value="intermediate"> Intermediate</label>
+                        <label><input type="radio" name="experience" value="advanced"> Advanced</label>
+                    </div>
+                </div>
+
+                <!-- MESSAGE -->
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <!-- DATE -->
+                <div class="form-group">
+                    <label for="date">Preferred Contact Date</label>
+                    <input type="date" id="date" name="date">
+                </div>
+
+                <!-- CONSENT -->
+                <div class="agreement">
+                    <label>
+                        <input type="checkbox" required>
+                        I confirm that the information provided above is correct[cite: 2].
+                    </label>
+                </div>
+
+                <!-- BUTTONS -->
+                <div class="form-buttons">
+                    <button type="submit" class="submit-button">Submit Form</button>
+                    <button type="reset" class="reset-button">Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="back-home">
+            <a href="index.html">&larr; Back to Portfolio</a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 Harsh Sharma | Contact Page</p>
+    </footer>
+
+</body>
+</html>

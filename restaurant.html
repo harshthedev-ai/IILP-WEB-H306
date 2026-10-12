@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gourmet Haven - Fine Dining & Reservations</title>
+    <style>
+        /* Global Styles & Reset */
+        *, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #fcf8f2; /* Warm cream background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section Styling (Restaurant Theme) */
+        #head {
+            background: linear-gradient(135deg, #2c1a1d, #4a2830);
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        #head h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: #f3d5b5;
+        }
+
+        #head h4 {
+            font-size: 1.2rem;
+            color: #e6ccb2;
+        }
+
+        /* Navigation Bar Styling */
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 12px;
+            background-color: #8b4513; /* Warm earth brown */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: color 0.2s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffdda1;
+            text-decoration: underline;
+        }
+
+        /* Main Content & Section Cards */
+        main {
+            padding: 20px 0;
+        }
+
+        section {
+            max-width: 900px;
+            padding: 25px;
+            margin: 15px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        section h2 {
+            margin-bottom: 15px;
+            color: #8b4513;
+            border-bottom: 2px solid #faedcd;
+            padding-bottom: 8px;
+        }
+
+        /* Large Hero Banner Image Styling */
+        .hero-banner {
+            max-width: 900px;
+            margin: 15px auto 0 auto;
+            padding: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Interactive Menu using Details & Summary Tags */
+        details {
+            margin-bottom: 12px;
+            border: 1px solid #e6ccb2;
+            border-radius: 8px;
+            background-color: #fffdf9;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        summary {
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background-color: #faedcd;
+            color: #582f0e;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+        }
+
+        summary:hover {
+            background-color: #f7ede2;
+        }
+
+        .menu-content {
+            padding: 15px 20px;
+        }
+
+        /* Menu Item Layout with Images */
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .dish-img {
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #e6ccb2;
+            flex-shrink: 0;
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.05rem;
+        }
+
+        .item-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: #b85d18;
+            font-size: 1.1rem;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+
+        /* Table Booking Form Styling */
+        .booking-form {
+            display: grid;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #582f0e;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            padding: 10px;
+            border: 1px solid #e6ccb2;
+            border-radius: 6px;
+            font-size: 1rem;
+            background-color: #fffdf9;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8b4513;
+            box-shadow: 0 0 5px rgba(139, 69, 19, 0.2);
+        }
+
+        .book-btn {
+            background-color: #8b4513;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 5px;
+        }
+
+        .book-btn:hover {
+            background-color: #582f0e;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            background-color: #fff;
+            border-top: 1px solid #e6ccb2;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header id="head">
+        <h1>The Gourmet Haven</h1>
+        <h4>Fine Dining & Artisan Kitchen</h4>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav aria-label="Restaurant Navigation">
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Our Menu</a></li>
+            <li><a href="#booking">Book a Table</a></li>
+            <li><a href="#hours">Hours & Location</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Large Header / Hero Image Section -->
+        <div class="hero-banner">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&auto=format&fit=crop&q=80" alt="Restaurant Interior Ambiance">
+        </div>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>Welcome to Our Kitchen</h2>
+            <p>At The Gourmet Haven, we combine fresh, locally sourced farm-to-table ingredients with expert culinary craftsmanship. Whether you are joining us for a cozy evening meal or reserving a table for a celebration, every experience is prepared to delight your senses.</p>
+        </section>
+
+        <!-- Menu Section using Details Tag & Images -->
+        <section id="menu">
+            <h2>Interactive Menu</h2>
+            <p style="margin-bottom: 15px; color: #666;">Click on any category below to browse our dishes with photos:</p>
+
+            <!-- Starters Category -->
+            <details open>
+                <summary>🥗 Starters & Appetizers</summary>
+                <div class="menu-content">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=150&auto=format&fit=crop&q=80" alt="Bruschetta" class="dish-img">
+                        <div class="item-details">
+                            <div class="item-name">Truffle Garlic Bruschetta</div>
+                            <div class="item-desc">Grilled sourdough topped with roasted cherry tomatoes, fresh basil, and truffle oil.</div>
+                        </div>
+                        <div class="item-price">$9.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://i0.wp.com/www.russianfilipinokitchen.com/wp-content/uploads/2015/04/crispy-fried-calamari-01.jpg?fit=582%2C400" alt="Calamari" class="dish-img">
+                        <div class="item-details">
+                            <div class="item-name">Crispy Calamari</div>
+                            <div class="item-desc">Lightly battered squid served with spicy arrabbiata sauce and lemon wedges.</div>
+                        </div>
+                        <div class="item-price">$12.00</div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Main Courses Category -->
+            <details>
+                <summary>🍽️ Main Courses</summary>
+                <div class="menu-content">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=150&auto=format&fit=crop&q=80" alt="Salmon" class="dish-img">
+                        <div class="item-details">
+                            <div class="item-name">Pan-Seared Atlantic Salmon</div>
+                            <div class="item-desc">Served with herb butter reduction, roasted asparagus, and creamy garlic mash.</div>
+                        </div>
+                        <div class="item-price">$24.00</div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?w=150&auto=format&fit=crop&q=80" alt="Risotto" class="dish-img">
+                        <div class="item-details">
+                            <div class="item-name">Wild Mushroom Risotto</div>
+                            <div class="item-desc">Arborio rice cooked slowly with seasonal forest mushrooms, parmesan, and white wine.</div>
+                        </div>
+                        <div class="item-price">$19.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=150&auto=format&fit=crop&q=80" alt="Steak" class="dish-img">
+                        <div class="item-details">
+                            <div class="item-name">Classic Prime Ribeye Steak</div>
+                            <div class="item-desc">10oz char-grilled beef cut to perfection, paired with seasonal vegetables.</div>
+                        </div>
+                        <div class="item-price">$28.50</div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Desserts & Beverages Category -->
+            <details>
+                <summary>🍰 Desserts & Beverages</summary>
+                <div class="menu-content">
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=150&auto=format&fit=crop&q=80" alt="Lava Cake" class="dish-img">
+                        <div class="item-details">
+                            <div class="item-name">Belgian Chocolate Lava Cake</div>
+                            <div class="item-desc">Warm molten chocolate cake served with a scoop of vanilla bean ice cream.</div>
+                        </div>
+                        <div class="item-price">$8.50</div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=150&auto=format&fit=crop&q=80" alt="Coffee" class="dish-img">
+                        <div class="item-details">
+                            <div class="item-name">Artisan Espresso / Cappuccino</div>
+                            <div class="item-desc">Freshly brewed single-origin coffee beans roasted locally.</div>
+                        </div>
+                        <div class="item-price">$4.00</div>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <!-- Table Booking Section -->
+        <section id="booking">
+            <h2>Reserve a Table</h2>
+            <p style="color: #666; margin-bottom: 15px;">Plan your dining experience with us by booking a table in advance.</p>
+            
+            <form class="booking-form" action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select guests</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="4">4 People</option>
+                            <option value="6">6 People</option>
+                            <option value="8+">8+ People (Large Group)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Reservation Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="requests">Special Requests / Dietary Notes</label>
+                    <textarea id="requests" name="requests" rows="3" placeholder="Let us know if you have any allergies or special occasions..."></textarea>
+                </div>
+
+                <button type="submit" class="book-btn">Confirm Reservation</button>
+            </form>
+        </section>
+
+        <!-- Hours & Location Section -->
+        <section id="hours">
+            <h2>Hours & Location</h2>
+            <p><strong>Address:</strong> 450 Culinary Avenue, Gourmet District</p>
+            <p style="margin-top: 8px;"><strong>Operating Hours:</strong> Tuesday – Sunday: 11:00 AM – 10:00 PM (Monday Closed)</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 The Gourmet Haven. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
