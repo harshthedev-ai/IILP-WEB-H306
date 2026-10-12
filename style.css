@@ -120,13 +120,13 @@ th {
     margin: 10px 0;
 }
 
-.project-list a {
+.project-grid a {
     color: #0066cc;
     text-decoration: none;
     font-weight: 600;
 }
 
-.project-list a:hover {
+.project-grid a:hover {
     text-decoration: underline;
 }
 
@@ -292,4 +292,39 @@ th {
     border-top: 1px solid #ddd;
     margin-top: 30px;
     background-color: #fff;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin-top: 8px;
+}
+.project-grid li.project-card {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#contactbutt {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background-color: rgb(23, 158, 255);
+    color: #fff;
+
+}
+
+#contactbutt:hover {
+    background-color: rgb(15, 130, 215);
 }
